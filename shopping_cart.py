@@ -22,7 +22,7 @@ cart_quantity_dict   =  {"1"   :   0,
                         }
 
 counter = 0
-display_line = "#" + "="*90 + "#"
+display_line = "=-=-"*20 + "="
 
 close_cart = False
 while not close_cart:
@@ -44,7 +44,7 @@ while not close_cart:
         total_cart_cost += price_dict.get(x) * cart_quantity_dict.get(x)
     print(f"Your current total is:\t£{round(total_cart_cost, 2)}\n" + display_line)
 
-
+    # Menu display
     print("1. Add an item to your basket")
     print("2. Remove an item from your basket")
     print("3. Checkout\n" + display_line)
@@ -104,8 +104,9 @@ while not close_cart:
 
     # Option 3 - Checkout
     elif menu_select == "3":
-        print(display_line + 
-              f"\nYour total to pay is:\t £{round(total_cart_cost, 2)}\n"
+        os.system('cls')
+        print(f"{display_line}\n"
+              f"Your total to pay is:\t £{round(total_cart_cost, 2)}\n"
               f"{display_line}\n"
               f"1. Checkout and close.\n"
               f"2. Main menu\n"
@@ -116,10 +117,11 @@ while not close_cart:
             close_cart = True
             os.system('cls')
             print(display_line +
-                "\nThank you for visiting Pets, Pets, Pets, and also more Pets Ltd.!"
+                "\nThank you for visiting Pets, Pets, Pets, and also more Pets Ltd.!\n"
                 "\nPlease come again soon!\n" + display_line)
         else:
             os.system('cls')
+            continue
     else:
         os.system('cls')
         print("ERROR: Invalid input, please try again.")
