@@ -123,4 +123,3 @@ while not close_cart:
     else:
         os.system('cls')
         print("ERROR: Invalid input, please try again.")
-
